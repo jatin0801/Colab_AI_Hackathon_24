@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations for {{ user['name'] }}</title>
+</head>
+<body>
+    <h1>Recommendations for {{ user['name'] }} ({{ user['type'] }})</h1>
+
+    <ul>
+        {% for _, project in recommendations.iterrows() %}
+        <li><strong>{{ project['title'] }}:</strong> {{ project['description'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>

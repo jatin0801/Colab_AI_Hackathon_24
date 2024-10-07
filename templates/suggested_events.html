@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Events</title>
+</head>
+<body>
+    <h1>Suggested Events</h1>
+
+    <ul>
+        {% for event in recommendations.itertuples() %}
+            <li>{{ event.title }} - {{ event.description }}</li>
+        {% else %}
+            <li>No recommendations available at this time.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('events_page') }}">Back to My Events</a>
+</body>
+</html>

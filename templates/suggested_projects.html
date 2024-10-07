@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Projects</title>
+</head>
+<body>
+    <h1>Suggested Projects</h1>
+
+    <ul>
+        {% for project in recommendations.itertuples() %}
+            <li>{{ project.title }} - {{ project.description }}</li>
+        {% else %}
+            <li>No recommendations available at this time.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('projects_page') }}">Back to My Projects</a>
+</body>
+</html>

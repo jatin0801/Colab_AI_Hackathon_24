@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+</head>
+<body>
+    <h1>My Projects</h1>
+
+    {% if not projects.empty %}
+        <ul>
+        {% for project in projects.iterrows() %}
+            <li>
+                <strong>Title:</strong> {{ project[1]['title'] }}<br>
+                <strong>Description:</strong> {{ project[1]['description'] }}<br>
+                <strong>Skills Required:</strong> {{ project[1]['skills_required'] }}<br>
+            </li>
+            <br>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No projects found</p>
+    {% endif %}
+
+    <a href="{{ url_for('suggested_projects_page') }}">View Suggested Projects</a><br><br>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user['name'] }} ({{ user['user_type'] }})</h1>
+
+    <ul>
+        <li><strong>Skills:</strong> {{ user['skills'] }}</li>
+        <li><strong>Goals:</strong> {{ user['goals'] }}</li>
+        <li><strong>Hobbies:</strong> {{ user['hobbies'] }}</li>
+    </ul>
+
+    <a href="{{ url_for('projects_page') }}">My Projects</a><br><br>
+    <a href="{{ url_for('events_page') }}">My Events</a><br><br>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
